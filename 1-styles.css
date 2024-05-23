@@ -1,39 +1,35 @@
-/* 0-styles.css */
+/* 1-styles.css */
 
 body {
     font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+h2 {
+    font-size: 24px;
 }
 
-li {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    font-size: 18px;
+a {
+    color: #0000EE; /* Default link color */
+    text-decoration: none; /* Remove the underline by default */
+    position: relative; /* Required for the pseudo-element positioning */
 }
 
-.icon {
-    display: inline-block;
-    width: 24px;  /* Width of each icon in the sprite */
-    height: 24px; /* Height of each icon in the sprite */
-    margin-left: 10px;
-    background-image: url('0-sprite.png');
-    background-repeat: no-repeat;
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    bottom: -2px; /* Position the underline slightly below the text */
+    left: 0;
+    background-color: #0000EE; /* Color of the underline */
+    visibility: hidden; /* Hidden by default */
+    transform: scaleX(0); /* Scale to 0 width */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
-.i-html {
-    background-position: 0 0; /* Adjust this based on the position of the HTML icon in the sprite */
-}
-
-.i-css {
-    background-position: -24px 0; /* Adjust this based on the position of the CSS icon in the sprite */
-}
-
-.i-js {
-    background-position: -48px 0; /* Adjust this based on the position of the JavaScript icon in the sprite */
+a:hover::after {
+    visibility: visible;
+    transform: scaleX(1); /* Scale to full width */
 }
 
