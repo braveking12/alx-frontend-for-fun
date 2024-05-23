@@ -1,0 +1,39 @@
+/* 0-styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;  /* Width of each icon in the sprite */
+    height: 24px; /* Height of each icon in the sprite */
+    margin-left: 10px;
+    background-image: url('0-sprite.png');
+    background-repeat: no-repeat;
+}
+
+.i-html {
+    background-position: 0 0; /* Adjust this based on the position of the HTML icon in the sprite */
+}
+
+.i-css {
+    background-position: -24px 0; /* Adjust this based on the position of the CSS icon in the sprite */
+}
+
+.i-js {
+    background-position: -48px 0; /* Adjust this based on the position of the JavaScript icon in the sprite */
+}
+
